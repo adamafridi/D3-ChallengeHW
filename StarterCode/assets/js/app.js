@@ -1,7 +1,7 @@
 // @TODO: YOUR CODE HERE!
 var svgWidth = 960;
 var svgHeight = 500;
-​
+
 var margin = {
     top: 20,
     right: 40,
@@ -29,17 +29,15 @@ var margin = {
   var chosenXAxis = "poverty";
   var chosenYAxis = "healthcare";
   
-  // Retrieve data from the CSV file and execute everything below
-  // How do I retrieve the data from within my DB?
-  d3.csv("./assets/data/data.csv").then(function(data,err){
-  //insert line 36 if connecting flask to local db******
-  // d3.json("http://127.0.0.1:5002/api").then(function(data, err) {
-    if (err) throw err;
+
   
-    plotFoodInsecurityAxes(data);
-    //plotFoodInsecurityMap(data);
-​
-    
+
+  // Retrieve data from the CSV file and execute everything below
+  d3.csv("./assets/data/data.csv").then(function(data,err){
+
+   if (err) throw err;
+   plotFoodInsecurityAxes(data);   
   }).catch(function(error) {
     console.log(error);
     });
+
